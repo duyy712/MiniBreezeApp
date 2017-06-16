@@ -1,0 +1,16 @@
+<div *ngIf="movie">
+    <!--<h2> Name: {{movie.Name}} </h2>
+    <p>Main Attribute: {{movie.Genre}} </p>
+    <p>Range :{{movie.Review}}</p>-->
+    <label> Name: </label>
+    <input type="text" [(ngModel)]="movie.Name">
+    <br>
+    <label> Genre: </label>
+    <input type="text" [(ngModel)]="movie.Genre">
+    <br>
+    <label> Review: </label>
+    <input type="text" [(ngModel)]="movie.Review">
+    <br>
+    <button (click)="save(movie.ID,movie)"> Save </button>
+    <button (click)="delete(movie.ID)"> Delete </button>
+</div>

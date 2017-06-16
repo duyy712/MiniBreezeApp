@@ -1,0 +1,13 @@
+<a [routerLink]="['../data']" > Data </a>
+<br>
+<br>
+
+<a [routerLink]="['/movies/create']"> Create New Movie </a>
+<div class="container">
+	<div class="movie-list">
+		<li *ngFor="let m of movies; let idx = index">
+			{{m.Name}}
+			<a [routerLink]="['/movies/details', m.ID]"> View </a>
+		</li>
+	</div>
+</div>
