@@ -1,0 +1,28 @@
+<a [routerLink]="['../movies']"> Movies </a>
+
+
+<br>
+<div *ngFor="let table of tables">
+    <a [routerLink] = "['/data/detail', table.ID]"> {{table.Name}} </a>
+</div>
+
+   
+
+<!--<div class="searchTable">
+    <label for="id"> Input ID </label>
+    <input id="id" type="number" [(ngModel)]="searchID">
+    <button (click)="searchTable(searchID)"> Search </button>
+</div>-->
+<p> ------------------------------------------------------------------------ </p>
+<div>
+    <button (click)="addTable()"> Add </button>
+</div>
+
+<div *ngIf="click">
+    <label for="name"> Name </label>
+    <input id="name" [(ngModel)]="table.Name"> <br>
+    <label for="description"> Description </label>
+    <input id="description" [(ngModel)]="table.Description"><br>
+    <button type="submit" (click)="saveTable()"> Save </button>
+</div>
+

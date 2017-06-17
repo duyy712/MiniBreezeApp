@@ -1,0 +1,45 @@
+<div>
+    <label><button type="submit" (click)="selectSearch()">Search</button></label>
+    <label><button type="submit" (click)="selectPaging()">Paging</button></label>
+    
+
+    <div *ngIf="selection ==1">
+        <label for="search"> Search String </label>
+        <input id="search" [(ngModel)]="searchString">
+        <button type="submit" (click)="search(searchString)"> Search </button>
+        
+        <div *ngIf="result">
+            <div *ngFor="let col of result">
+                {{col.Name}}
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selection == 2">
+        <label for="pSize"> Page Size </label>
+        <input id="pSize" [(ngModel)]="pageSize">
+        <button type="submit" (click)="paging()"> Submit</button>
+         
+        <div *ngIf="result">
+            <div *ngFor="let col of result">
+                {{col.Name}}
+            </div>
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><button class="page-link" (click)="gotoPrev()" [disabled]="pageIndex == 1">Previous</button></li>
+                    <li class="page-item"><button class="page-link" ngDefaultControl>{{pageIndex}}</button></li>
+                    <li class="page-item"><button class="page-link" (click)="gotoNext()" [disabled]="pageIndex >= totalPage">Next</button></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div *ngIf = "columns && !result" >
+        <div *ngFor= "let col of columns">
+            {{col.Name}}
+        </div>
+    </div>
+   
+
+</div>

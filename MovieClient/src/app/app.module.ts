@@ -2,20 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {RouterModule} from '@angular/router';
-import {BreezeBridgeAngularModule} from 'breeze-bridge-angular';
-import {routing} from './app.routes';
+import { RouterModule } from '@angular/router';
+import { BreezeBridgeAngularModule } from 'breeze-bridge-angular';
+import { routing } from './app.routes';
 
 
 import { AppComponent } from './app.component';
-import { MovieComponent} from './data/movie.component';
-import {MovieDetailComponent} from './data/movie-detail.component';
-import {CreateMovieComponent} from './data/create-movie.component';
-import {DataModelComponent} from './data-model/data-model.component';
+import { MovieComponent } from './data/movie.component';
+import { MovieDetailComponent } from './data/movie-detail.component';
+import { CreateMovieComponent } from './data/create-movie.component';
+import { TableComponent } from './table/table.component';
+import { TableDetailComponent } from './table/table-detail.component';
 
 
-import {MovieService} from './data/movie.service';
-import {DataModelService} from './data-model/data-model.service';
+
+import { MovieService } from './data/movie.service';
+import { TableService } from './table/table.service';
 
 
 
@@ -25,7 +27,8 @@ import {DataModelService} from './data-model/data-model.service';
     MovieComponent,
     MovieDetailComponent,
     CreateMovieComponent,
-    DataModelComponent
+    TableComponent,
+    TableDetailComponent
 
   ],
   imports: [
@@ -37,7 +40,7 @@ import {DataModelService} from './data-model/data-model.service';
     ReactiveFormsModule,
     BreezeBridgeAngularModule
   ],
-  providers: [MovieService, DataModelService],
+  providers: [MovieService, TableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

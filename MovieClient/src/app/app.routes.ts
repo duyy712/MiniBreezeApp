@@ -2,12 +2,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { MovieComponent } from './data/movie.component';
 import { MovieDetailComponent } from './data/movie-detail.component';
 import { CreateMovieComponent } from './data/create-movie.component';
-import { DataModelComponent } from './data-model/data-model.component';
+import { TableComponent } from './table/table.component';
+import { TableDetailComponent } from './table/table-detail.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/movies',
+    redirectTo: '/data',
     pathMatch: 'full'
   },
   {
@@ -24,7 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'data',
-    component: DataModelComponent
+    component: TableComponent
+  },
+  {
+    path: 'data/detail/:id',
+    component: TableDetailComponent
   }
 
 ];
